@@ -2,6 +2,8 @@
 
 A responsive, interactive redesign of a Polish VAT register. Built with React, Vite, Motion and Radix Select. All records are fictional and all operations run in the browser.
 
+**[Live demo](https://onsaldo-vat.vercel.app/)** · [Empty state](https://onsaldo-vat.vercel.app/?state=empty) · [Error and retry](https://onsaldo-vat.vercel.app/?state=error)
+
 ## Run locally
 
 Requires Node.js 20.19+ or 22.12+.
@@ -90,6 +92,8 @@ Semantic tables and buttons, labelled inputs, keyboard-operable tabs, focus outl
 
 ## Deployment
 
-`vercel.json` selects the Vite build and `dist/client` output. No environment variables are needed. Import the repository into Vercel with the Vite preset; commits to `main` can deploy automatically.
+Hosted on Vercel Hobby at [onsaldo-vat.vercel.app](https://onsaldo-vat.vercel.app/), connected to [this GitHub repository](https://github.com/ZhyvotivskyiOleksii/onsaldo-vat). Commits to `main` deploy automatically.
+
+`vercel.json` selects the Vite build and `dist/client` output. No environment variables are needed.
 
 The `worker/`, `.openai/`, build helper and worker tests are retained from the prototype starter. They are not required to serve the static Vercel deployment.
