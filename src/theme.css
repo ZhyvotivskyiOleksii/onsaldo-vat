@@ -1,0 +1,144 @@
+/* Interpolate the palette once at the root. Descendants inherit each frame
+   without starting new transitions from their parents' intermediate colors. */
+@property --bg {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #ffffff;
+}
+@property --surface {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #ffffff;
+}
+@property --text {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #3a3a3a;
+}
+@property --heading {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #3a3a3a;
+}
+@property --muted {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #6b6b6b;
+}
+@property --secondary {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #555555;
+}
+@property --border {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #e2e2e2;
+}
+@property --border-strong {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #d5d5d5;
+}
+@property --accent {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #009a00;
+}
+@property --accent-ink {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #006c00;
+}
+@property --subtle {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #f7f7f7;
+}
+@property --accent-hover {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #007d00;
+}
+@property --accent-soft {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #d9f0d9;
+}
+@property --accent-mid {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #b9dfb9;
+}
+@property --hover {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #f5f5f5;
+}
+@property --amber-bg {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #fff8e9;
+}
+@property --amber {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #916c2d;
+}
+@property --amber-border {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #f1e6cd;
+}
+@property --red {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #b45151;
+}
+@property --profile-bg {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #f1f1f1;
+}
+@property --profile-text {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #555555;
+}
+@property --on-accent {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #ffffff;
+}
+@property --shadow-color {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #00000012;
+}
+@property --shadow-fine {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #00000005;
+}
+
+:root.theme-transitioning {
+  transition-property:
+    --bg, --surface, --text, --heading, --muted, --secondary, --border,
+    --border-strong, --accent, --accent-ink, --subtle, --accent-hover,
+    --accent-soft, --accent-mid, --hover, --amber-bg, --amber, --amber-border,
+    --red, --profile-bg, --profile-text, --on-accent, --shadow-color,
+    --shadow-fine;
+  transition-duration: 420ms;
+  transition-timing-function: ease-in-out;
+}
+.theme-transitioning *,
+.theme-transitioning *::before,
+.theme-transitioning *::after {
+  /* Preserve hover movement and the theme icon's motion, not color lag. */
+  transition-property: opacity, transform !important;
+}
+@media (prefers-reduced-motion: reduce) {
+  :root.theme-transitioning {
+    transition-duration: 0s;
+  }
+}

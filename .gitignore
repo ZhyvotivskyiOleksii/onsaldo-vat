@@ -1,0 +1,12 @@
+node_modules/
+dist/
+.vercel/
+.DS_Store
+*.log
+.env*
+!.env.example
+
+# Local working notes and visual exploration, not application source.
+AGENTS.md
+design-qa.md
+evidence/
